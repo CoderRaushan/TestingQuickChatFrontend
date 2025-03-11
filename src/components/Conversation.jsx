@@ -29,7 +29,7 @@ function Conversation() {
   const sendMessageHandler = async (ReceiverId) => {
     try {
       const res = await axios.post(
-        `http://localhost:7464/user/message/send/${ReceiverId}`,
+        `https://testingquickchatbackend.onrender.com/user/message/send/${ReceiverId}`,
         { text: TextMsg },
         {
           headers: { "Content-Type": "application/json" },

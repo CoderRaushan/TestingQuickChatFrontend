@@ -9,7 +9,7 @@ function useGetUserProfile(userId)
     useEffect(()=>{
         const fetchUserProfile=async()=>
         {
-            const Uri=`http://localhost:7464/user/${userId}/profile`;
+            const Uri=`https://testingquickchatbackend.onrender.com/user/${userId}/profile`;
             try {
                 const response = await axios.get(Uri,{
                     headers:{'Content-Type':'application/json'},

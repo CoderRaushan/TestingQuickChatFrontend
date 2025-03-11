@@ -10,7 +10,7 @@ function GetAllMessages() {
     const fetchAllMessages = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:7464/user/message/all/${selectedUsers._id}`,
+          `https://testingquickchatbackend.onrender.com/user/message/all/${selectedUsers._id}`,
           {
             headers: { "Content-Type": "application/json" },
             withCredentials: true,

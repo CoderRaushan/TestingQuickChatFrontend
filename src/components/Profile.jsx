@@ -49,7 +49,7 @@ function Profile() {
   // const handleFollwoAndUnfollow = async () => {
   //   try {
   //     const response = await axios.post(
-  //       `http://localhost:7464/user/followOrUnfollow/${UserProfile?._id}`,
+  //       `https://testingquickchatbackend.onrender.com/user/followOrUnfollow/${UserProfile?._id}`,
   //       {},
   //       {
   //         withCredentials: true,
@@ -103,7 +103,7 @@ function Profile() {
     
     try {
       const response = await axios.post(
-        `http://localhost:7464/user/followOrUnfollow/${UserProfile._id}`,
+        `https://testingquickchatbackend.onrender.com/user/followOrUnfollow/${UserProfile._id}`,
         {},
         { withCredentials: true, headers: { "Content-Type": "application/json" } }
       );

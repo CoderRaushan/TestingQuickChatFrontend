@@ -25,7 +25,7 @@ function PostDialog({ PostOpen, setPostOpen,post }) {
   const SendCommentHandler = async () => {
     try {
       const response = await axios.post(
-        `http://localhost:7464/user/post/${post._id}/comment`,
+        `https://testingquickchatbackend.onrender.com/user/post/${post._id}/comment`,
         { text:commentText },
         {
           headers: { "Content-Type": "application/json" },

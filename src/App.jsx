@@ -20,7 +20,7 @@ function App() {
   const { user } = useSelector((store) => store.auth);
   useEffect(() => {
     if (user) {
-      const SocketIo = io("http://localhost:7464", {
+      const SocketIo = io("https://testingquickchatbackend.onrender.com", {
         query: {
           userId: user._id,
         },

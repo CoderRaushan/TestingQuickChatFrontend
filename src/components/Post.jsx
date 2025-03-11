@@ -39,7 +39,7 @@ function Post({ post }) {
     try {
       const action = like ? "dislike" : "like";
       const response = await axios.get(
-        `http://localhost:7464/user/post/${post._id}/${action}`,
+        `https://testingquickchatbackend.onrender.com/user/post/${post._id}/${action}`,
         {
           headers: { "Content-Type": "application/json" },
           withCredentials: true,
@@ -71,7 +71,7 @@ function Post({ post }) {
   const HandleBookmark = async () => {
     try {
       const response = await axios.post(
-        `http://localhost:7464/user/post/${post._id}/bookmark`,
+        `https://testingquickchatbackend.onrender.com/user/post/${post._id}/bookmark`,
         {},
         {
           headers: { "Content-Type": "application/json" },
@@ -98,7 +98,7 @@ function Post({ post }) {
   const HandleCommentPost = async () => {
     try {
       const response = await axios.post(
-        `http://localhost:7464/user/post/${post._id}/comment`,
+        `https://testingquickchatbackend.onrender.com/user/post/${post._id}/comment`,
         { text },
         {
           headers: { "Content-Type": "application/json" },
@@ -124,7 +124,7 @@ function Post({ post }) {
     }
   };
   const HandleDeletePost = async () => {
-    const deleteUri = `http://localhost:7464/user/post/delete/${post._id}`;
+    const deleteUri = `https://testingquickchatbackend.onrender.com/user/post/delete/${post._id}`;
     try {
       const response = await axios.delete(deleteUri, {
         headers: {
