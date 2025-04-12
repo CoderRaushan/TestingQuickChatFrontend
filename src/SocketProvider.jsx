@@ -6,13 +6,14 @@ import { setOnlineUsers } from "./ReduxStore/ChatSlice.js";
 import { setLikeNotification } from "./ReduxStore/RealTimeNotificationSlice.js";
 import { setAuthUser } from "./ReduxStore/authSlice.js";
 import { useDispatch } from "react-redux";
-const SocketProvider = ({ children }) => {
-   const dispatch = useDispatch();
+const SocketProvider = (props) => {
+    const children = props.children;
+    const dispatch = useDispatch();
   const { user } = useSelector((store) => store.auth);
   const [socket, setSocket] = useState(null);
   useEffect(() => {
     if (user) {
-      const SocketIo = io("http://localhost:7464", {
+      const SocketIo = io("https://testingquickchatbackend.onrender.com", {
         query: {
           userId: user._id,
         },
@@ -46,6 +47,8 @@ const SocketProvider = ({ children }) => {
       setSocket(null);
     }
   }, [user, dispatch]);
-  return <SocketContext.Provider value={socket}>{children}</SocketContext.Provider>;
+  return <SocketContext.Provider value={socket}>
+    {children}
+    </SocketContext.Provider>;
 };
 export default SocketProvider;
